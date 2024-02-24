@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 function App() {
-  axios.defaults.baseURL = import.meta.env.SERVER_URL;
+  axios.defaults.baseURL = import.meta.env.VITE_PUBLIC_SERVER_URL;
   axios.defaults.withCredentials = true;
 
   return (
