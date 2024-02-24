@@ -35,6 +35,9 @@ app.use(cookieParser())
 
 
 /** run app routes */
+app.get("/api/home", (req, res) => {
+    res.status(200).json({name: 'Tamale Frank'})
+})
 app.use("/api/users", userRoutes);
 
 
