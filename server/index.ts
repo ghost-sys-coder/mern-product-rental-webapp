@@ -6,10 +6,10 @@ import cookieParser from "cookie-parser";
 
 
 /** import mongodb connection */
-import { connectToMongoDB } from "../database/mongodb";
+import { connectToMongoDB } from "./database/mongodb";
 
 /** import application routes */
-import userRoutes from "../routes/user.route";
+import userRoutes from "./routes/user.route";
 
 /** set up env file configuration */
 dotenv.config({ path: "./config/config.env" });
@@ -35,14 +35,18 @@ app.use(cookieParser())
 
 
 /** run app routes */
-app.get("/api/home", (req, res) => {
-    res.status(200).json({name: 'Tamale Frank'})
+app.get("/api/", (req, res) => {
+    res.status(200).json({name: 'Tamale Frank and Allan Mark again!'})
 })
 app.use("/api/users", userRoutes);
 
 
 /** run express app */
-app.listen(port, async() => {
+app.listen(port, async () => {
     await connectToMongoDB();
     console.log(`Application running on port number:${port}`)
-})
+});
+
+
+/** export express app */
+export default app;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { UserButton, UserProfile, useSession } from "@clerk/clerk-react";
+import { UserButton, useSession } from "@clerk/clerk-react";
 
 const Home = () => {
   const { session, isSignedIn } = useSession();
@@ -14,7 +14,6 @@ const Home = () => {
       <div className="bg-primary min-h-screen flex flex-col gap-2 text-white justify-center items-center">
           Home
       <UserButton afterSignOutUrl="/" showName />
-      <UserProfile />
       </div>
   )
 }
